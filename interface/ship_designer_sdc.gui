@@ -1,0 +1,146 @@
+guiTypes = {
+	
+	# DESIGN ENTRY
+	containerWindowType = {
+		name = "ship_design_entry"
+		# size = { width = 158 height = 101 }
+		size = { width = 250 height = 65 }
+
+		# iconType = {
+		# 	name = "bg"
+		# 	spriteType = "GFX_ship_design_entry_bg"
+		# 	position = { x = 3 y = 1 }
+		# 	maxHeight = 60
+		# }
+
+		buttonType = {
+			name = "render_target"
+			quadTextureSprite = "GFX_dummy_3d_design_entry"
+			# position = { x = 4 y = 16 }
+			# size = { x = 206 y = 80 }
+			position = { x = 70 y = 0 }
+			size = { x = 206 y = 65 }
+		}
+		buttonType = {
+			name = "button"
+			position = { x = -5 y = 0 }
+			# position = { x = 300 y = 10 }
+			# quadTextureSprite = "GFX_ship_design_entry_button"
+			quadTextureSprite = "GFX_tiles_frame_light"
+			# alwaysTransparent = yes
+			size = {x = 220 y = 65}
+		}
+		buttonType = {
+			name = "delete"
+			quadTextureSprite = "GFX_fleet_disband"
+			orientation = "UPPER_RIGHT"
+			position = { x = -60 y = 11 }
+		}
+		OverlappingElementsBoxType = {
+			name = "icons"
+			position = { x = 10 y = 68 }
+			size = { x = 128 y = 24 }	#same position as 3d_view and same size as 3d_view_size
+			spacing = 10
+			format = left
+		}
+
+		# instantTextBoxType = {
+		# 	name = "ship_size"
+		# 	font = "cg_16b"
+		# 	text = "Corvette"
+
+		# 	position = { x= 7 y= 9 }
+		# 	maxWidth = 210
+		# 	maxHeight = 40
+		# 	fixedsize = yes
+		# 	format = left
+		# 	alwaystransparent = yes
+		# }
+		instantTextBoxType = {
+			name = "label"
+			font = "cg_16b"
+			text = "NAME HERE"
+
+			text_color_code = "H"
+			# position = { x= 6 y= 24}
+			position = { x= 7 y= 9 }
+			maxWidth = 210
+			maxHeight = 40
+			fixedsize = yes
+			format = left
+			#alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "auto_gen"
+			font = "cg_16b"
+			text = "AUTO_GENERATED_BEST"
+			text_color_code = "H"
+			position = { x= 6 y= 40 }
+			# position = { x= 6 y= 24}
+			maxWidth = 170
+			maxHeight = 40
+			fixedsize = yes
+			format = left
+			#alwaystransparent = yes
+
+			# format = right
+			# position = { x= 10 y= 40}
+		}
+	}
+
+	# containerWindowType = {
+	# 	name = "new_ship_design_entry"
+	# 	size = { width = 128 height = 90 }
+
+	# 	iconType = {
+	# 		name = "bg"
+	# 		spriteType = "GFX_ship_design_entry_bg"
+	# 		position = { x = 3 y = 1 }
+	# 	}
+	# 	buttonType = {
+	# 		name = "button"
+	# 		position = { x = -3 y = -3 }
+	# 		quadTextureSprite = "GFX_ship_design_entry_button"
+	# 	}
+
+	# 	instantTextBoxType = {
+	# 		name = "label"
+	# 		font = "cg_16b"
+	# 		text = "NAME HERE"
+	# 		position = { x= 0 y= 38 }
+	# 		maxWidth = 206
+	# 		maxHeight = 40
+	# 		fixedsize = yes
+	# 		format = center
+	# 		alwaystransparent = yes
+	# 	}
+	# }
+
+  containerWindowType = {
+    name = "new_ship_design_entry"
+    size = { width = 128 height = 50 }
+
+    buttonType = {
+      name = "button"
+      position = { x = -5 y = 0 }
+      # position = { x = 300 y = 10 }
+      # quadTextureSprite = "GFX_ship_design_entry_button"
+      quadTextureSprite = "GFX_tiles_frame_light"
+      # alwaysTransparent = yes
+      size = {x = 220 y = 50}
+    }
+
+    instantTextBoxType = {
+      name = "label"
+      font = "cg_16b"
+      text = "NAME HERE"
+      position = { x= 0 y= 17}
+      maxWidth = 206
+      maxHeight = 30
+      fixedsize = yes
+      format = center
+      alwaystransparent = yes
+    }
+  }
+}

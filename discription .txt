@@ -1,0 +1,21 @@
+The goal of this mod is to improve the looks of the game, hence "Cosmetics".
+
+Currently this mod adds
+[olist]
+   [*] 8200 New emblems to choose from
+   [*] 206 New flag backgrounds
+   [*] An all new rebuilt ethics and government array of choices
+   [*] Adds some new loadscreen images to surprise you while waiting
+[/olist] Changes some of the UI for better ease
+[olist]
+   [*] Species modify screen
+   [*] Makes the outliner larger to see more stuff
+   [*] Edits the browser for access to the various resources
+   [*] Moves around the alliance and war icons for a larger outliner
+[/olist]
+
+That wraps up what this mod changes........for now
+
+In the next couple updates there will be some major updates to the ui so...stay tuned!
+
+Cheers!

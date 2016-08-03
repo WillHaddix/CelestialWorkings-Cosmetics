@@ -1,0 +1,39 @@
+guiTypes = {
+
+	windowType = {
+		name = "resource_icon_item"
+		backGround = ""
+		position = { x = 0 y = 0 }
+		size = { x = 12 y = 32 }
+		moveable = 0
+		dontRender = ""
+		horizontalBorder = ""
+		verticalBorder = ""
+		fullScreen = no
+		
+		iconType = {
+			name = "icon"
+			spriteType = "GFX_resource_minerals"
+			position = { x=0 y=-5 }
+			scale = 0.70
+		}
+		
+		# Resources on planets text
+		
+		instantTextBoxType={
+			name = "num"
+			font = "hoi_16mbs"
+			borderSize = { x=0 y=0 }
+			position = { x=-7 y=0 }
+			maxWidth = 28
+			maxHeight = 16
+			format = center
+			text = "0"
+		}
+	}
+	
+	positionType = {
+		name = "planet_map_icon_colonizable_offset"
+		position = { x = -35 y = 13 }
+		
+}

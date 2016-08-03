@@ -1,0 +1,43 @@
+﻿l_english:
+ 
+ ## Flag Icons ## 
+ FLAG_CATEGORY_interstellar-essentials:0 "Essentials"
+ 
+ ## Name Lists ##
+ name_list_mod-ies_human_earth-liberation-front:0 "Earth Liberation Front"
+ name_list_mod-ies_human_earth-liberation-front_desc:0 "Against all enemies, both xeno and domestic."
+ name_list_mod-ies_human_enlightened-peoples-earth:0 "Enlightened Peoples"
+ name_list_mod-ies_human_enlightened-peoples-earth_desc:0 "Nerve staples for everyone."
+ name_list_mod-ies_human_holy-terran-empire:0 "Holy Terran Empire"
+ name_list_mod-ies_human_holy-terran-empire_desc:0 "The Roman Empire never fell."
+ name_list_mod-ies_human_human-continuity-initiative:0 "Human Continuity Initiative"
+ name_list_mod-ies_human_human-continuity-initiative_desc:0 "The exiles of a lost Earth."
+ name_list_mod-ies_human_mars-colonial-authority:0 "Mars Colonial Authority"
+ name_list_mod-ies_human_mars-colonial-authority_desc:0 "Humanity escaped the death of Earth by going to Mars."
+ name_list_mod-ies_human_millennium-covenant:0 "Millennium Covenant"
+ name_list_mod-ies_human_millennium-covenant_desc:0 "World War 3 created a global syncretic-theocratic state."
+ name_list_mod-ies_human_revolutionary-union-sol:0 "Revolutionary Union"
+ name_list_mod-ies_human_revolutionary-union-sol_desc:0 "The Soviet Union won the Cold War."
+ name_list_mod-ies_human_united_earth_colonies:0 "United Earth Colonies"
+ name_list_mod-ies_human_united_earth_colonies_desc:0 "A better future for all mankind."
+
+ ## Planet Modifiers ##
+ mod-ies_irradiated_planet:0 "Irradiated"
+ mod-ies_irradiated_planet_desc:0 "Widespread use of radiological weapons crippled this planet's ecosystems in the recent past. It will be several generations before the effects subside."
+
+ ## System Initializers ##
+ mod-ies_sol-alternate-neighbors_NAME:0 "Sol (Alt Neighbors)"
+ mod-ies_sol-alternate-neighbors_DESC:0 "System modeled after Earth's solar system, with adjacent stars.\n\n$system_initializer_DESC$"
+ mod-ies_sol-nuked-earth_NAME:0 "Sol (Nuked Earth)"
+ mod-ies_sol-nuked-earth_DESC:0 "System modeled after Earth's solar system, with adjacent stars.\n\n$system_initializer_DESC$"
+ mod-ies_sol-mars_NAME:0 "Sol (Mars)"
+ mod-ies_sol-mars_DESC:0 "System modeled after Earth's solar system, with adjacent stars.\n\n$system_initializer_DESC$"
+ mod-ies_solntse_NAME:0 "Sol (Russian Names)"
+ mod-ies_solntse_DESC:0 "System modeled after Earth's solar system, with adjacent stars.\n\n$system_initializer_DESC$"
+ mod-ies_sol-jovian-exodus_NAME:0 "Sol (Jovian Exodus)"
+ mod-ies_sol-jovian-exodus_DESC:0 "System modeled after Earth's solar system, with adjacent stars.\n\n$system_initializer_DESC$"
+  
+ ## Tile Blockers ##
+ mod-ies_tb_chaos_terrain:0 "£blocker  Chaos Terrain"
+ mod-ies_tb_chaos_terrain_desc:0 "A vast area where ridges, cracks, and flat plains are jumbled and enmeshed with one another. It is a rat's nest of mesas, buttes, and hills, chopped through with valleys which in places look almost patterned. This terrain is very difficult to work in and greatly hinders development."
+ 
