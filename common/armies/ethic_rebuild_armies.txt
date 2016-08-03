@@ -1,0 +1,69 @@
+# Elite Inquisitor Armies
+
+elite_inquisitor_army = {
+	damage = 1.5
+	health = 2.0
+	morale = 2.0
+	morale_damage = 1.5
+	assault = yes
+	time = 200
+	maintenance = 1.0
+	icon_frame = 2
+	cost = {
+		minerals = 120
+		energy = 20
+	}
+
+	built_for_ruler = yes
+
+	potential = {
+		owner = {
+			OR = {
+				has_government = sacred_un
+				has_government = div_imperium
+			}
+			exists = ruler
+			NOT = { 
+					 check_variable = {
+						which = "elite_soldier_count" 
+						value = 5
+						}
+			}
+		}
+	}
+
+
+	allow = {
+		custom_tooltip = {
+			text = elite_inquisitor_army_trigger_tooltip
+			owner = {
+				exists = ruler
+				NOT = { 
+					 check_variable = {
+						which = "elite_soldier_count" 
+						value = 5
+						}
+				}
+			}
+		}
+	}
+	
+	on_queued = {
+		owner = {
+			change_variable = {
+				which = "elite_soldier_count" 
+				value = 1
+				}
+			}
+		}
+
+	
+	on_unqueued = {
+		owner = {
+			change_variable = {
+				which = "elite_soldier_count" 
+				value = -1
+				}
+			}
+		}
+	}

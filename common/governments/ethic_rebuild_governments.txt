@@ -1,0 +1,322 @@
+
+# Eudaimonic Society
+social_democracy = {
+	potential = {
+		hidden_trigger = { NOT = { is_country_type = fallen_empire } }
+	}
+
+	ethics = {
+
+		OR = {
+			has_ethic = "ethic_individualist"
+			has_ethic = "ethic_fanatic_individualist"
+		}
+		
+		OR = {
+			has_ethic = "ethic_pacifist"
+			has_ethic = "ethic_fanatic_pacifist"
+		}
+		
+
+	}
+	
+	modifier = {
+		tile_resource_food_mult = 0.05
+		tile_resource_minerals_mult = 0.05 
+        tile_resource_energy_mult = 0.05	
+        pop_peace_happiness = 0.05	
+        pop_war_happiness = -0.05	
+        army_morale = -0.15		
+		 
+	}
+	
+	uses_mandates = yes
+	election_term_years = 10
+	re_election_allowed = yes
+	election_type = democratic
+	
+	ruler_title = RT_PRESIDENT
+	upgrade = social_utopia
+}
+
+# Advanced Eudaimonic Society
+social_utopia = {
+	prerequisites = { "tech_galactic_administration" }
+	
+	potential = {
+		hidden_trigger = { NOT = { is_country_type = fallen_empire } }
+	}
+
+	ethics = {
+
+		OR = {
+			has_ethic = "ethic_individualist"
+			has_ethic = "ethic_fanatic_individualist"
+		}
+		
+		OR = {
+			has_ethic = "ethic_pacifist"
+			has_ethic = "ethic_fanatic_pacifist"
+		}
+
+	}
+	
+	modifier = {
+
+		tile_resource_food_mult = 0.1
+		tile_resource_minerals_mult = 0.1 
+        tile_resource_energy_mult = 0.1		
+        pop_peace_happiness = 0.1	
+        pop_war_happiness = -0.1	
+        army_morale = -0.3		
+		
+	}
+	
+	uses_mandates = yes
+	election_term_years = 10
+	re_election_allowed = yes
+	election_type = democratic
+	
+	ruler_title = RT_PRESIDENT
+	
+	pickable_at_start = no
+}
+
+
+
+
+
+# Hive Mind
+communist_dictatorship = {
+	has_heir = yes
+	use_regnal_names = no
+	dynastic_last_names = no
+	
+	potential = {
+		hidden_trigger = { NOT = { is_country_type = fallen_empire } }
+	}
+
+	ethics = {
+		OR = {
+			has_ethic = "ethic_fanatic_socialism"
+		}
+
+		OR = {
+			has_ethic = "ethic_fanatic_collectivist"
+		}
+		
+		OR = {
+			has_ethic = "ethic_fanatic_xenophobe"
+		}
+	}
+	
+	modifier = {
+		pop_ethic_shift = -0.5
+		pop_growth_req_mult = -0.25
+		country_core_sector_system_cap = 2
+		pop_slavery_tolerance = 0.25
+        all_technology_research_speed = 0.15
+		num_tech_alternatives_add = -1
+		species_leader_exp_gain = -0.25	
+		pop_migration_speed = -0.25
+		country_resettlement_cost_mult = 0.25
+
+	}
+	
+	ruler_title = RT_HIVEMIND
+	heir_title = RT_HIVEMIND
+	upgrade = communist_utopia
+}
+
+# Hive Consciousness
+communist_utopia = {
+	prerequisites = { "tech_galactic_administration" }
+	has_heir = yes
+	use_regnal_names = no
+	dynastic_last_names = no
+	
+	potential = {
+		hidden_trigger = { NOT = { is_country_type = fallen_empire } }
+	}
+
+	ethics = {
+		OR = {
+			has_ethic = "ethic_fanatic_socialism"
+		}
+
+		OR = {
+			has_ethic = "ethic_fanatic_collectivist"
+		}
+		
+		OR = {
+			has_ethic = "ethic_fanatic_xenophobe"
+		}
+		
+	}
+	
+	modifier = {
+		pop_ethic_shift = -1
+		pop_growth_req_mult = -0.5
+		country_core_sector_system_cap = 4
+		pop_slavery_tolerance = 0.5
+        all_technology_research_speed = 0.3
+		num_tech_alternatives_add = -2
+		species_leader_exp_gain = -0.5				
+		pop_migration_speed = -0.5
+		country_resettlement_cost_mult = 0.5
+
+
+	}
+	
+	ruler_title = RT_HIVEMIND
+	heir_title = RT_HIVEMIND
+	
+	pickable_at_start = no
+}
+
+
+
+
+
+
+# Pioneer's Guild
+pioneer_guild = {
+	potential = {
+		hidden_trigger = { NOT = { is_country_type = fallen_empire } }
+	}
+
+	ethics = {
+	
+		OR = {
+			has_ethic = "ethic_expansionist"
+			has_ethic = "ethic_fanatic_expansionist"
+		}
+		
+		OR = {
+			has_ethic = "ethic_materialist"
+			has_ethic = "ethic_fanatic_materialist"
+		}
+
+		NOT = { has_ethic = "ethic_fanatic_collectivist" }
+		NOT = { has_ethic = "ethic_fanatic_individualist" }
+	}
+	
+	modifier = {
+                ship_sensor_range_mult = 0.25
+		        science_ship_survey_speed = 0.15
+		        ship_anomaly_generation_chance_mult = 0.15
+		        ship_anomaly_fail_risk = -0.15
+                ship_anomaly_research_speed_mult = 0.15
+                shipsize_research_station_build_cost_mult = -0.25
+				country_physics_tech_research_speed = 0.25
+                
+	}
+	
+	election_term_years = 25
+	election_term_variance = 5 # +/- 5 years
+	election_type = oligarchic
+	can_have_emergency_elections = yes
+	emergency_election_cost = 150
+	has_agendas = yes
+	
+	max_election_candidates = 4
+	election_candidates = {
+		modifier = {
+			add = 1000
+			OR = {
+				leader_class = ruler
+				AND = {
+					exists = pop_faction
+					pop_faction = {
+						is_scope_valid = yes
+						is_pop_faction_type = loyalist
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 100
+			leader_class =  = scientist
+		}
+	}
+	
+	ruler_title = RT_COORDINATOR
+	upgrade = interstellar_consortium
+}
+
+
+
+# Advanced Pioneer's Guild
+interstellar_consortium = {
+	prerequisites = { "tech_galactic_administration" }
+	
+	potential = {
+		hidden_trigger = { NOT = { is_country_type = fallen_empire } }
+	}
+
+	ethics = {
+	
+		OR = {
+			has_ethic = "ethic_expansionist"
+			has_ethic = "ethic_fanatic_expansionist"
+		}
+		
+		OR = {
+			has_ethic = "ethic_materialist"
+			has_ethic = "ethic_fanatic_materialist"
+		}
+		
+		
+		NOT = { has_ethic = "ethic_fanatic_collectivist" }
+		NOT = { has_ethic = "ethic_fanatic_individualist" }
+	}
+	
+	modifier = {
+                ship_sensor_range_mult = 0.5
+		        science_ship_survey_speed = 0.3
+		        ship_anomaly_generation_chance_mult = 0.3
+		        ship_anomaly_fail_risk = -0.3
+                ship_anomaly_research_speed_mult = 0.3
+                shipsize_research_station_build_cost_mult = -0.5
+				country_physics_tech_research_speed = 0.5
+	}
+	
+	election_term_years = 25
+	election_term_variance = 5 # +/- 5 years
+	election_type = oligarchic
+	can_have_emergency_elections = yes
+	emergency_election_cost = 150
+	has_agendas = yes
+	
+	max_election_candidates = 4
+	election_candidates = {
+		modifier = {
+			add = 1000
+			OR = {
+				leader_class = ruler
+				AND = {
+					exists = pop_faction
+					pop_faction = {
+						is_scope_valid = yes
+						is_pop_faction_type = loyalist
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 100
+			leader_class = scientist
+		}
+	}
+	
+	ruler_title = RT_SENIOR_COORDINATOR
+	
+	pickable_at_start = no
+}
+
+
+
+
+
+
+

@@ -1,0 +1,2680 @@
+@distance = 25
+@base_moon_distance = 10
+
+### Sol System, Alternate Neighbors
+mod-ies_sol-alternate-neighbors = {
+	name = "Sol"
+	
+	class = "sc_g"
+	asteroids_distance = 120
+	flags = { sol_system sol }
+	
+	usage = custom_empire
+	
+	planet = {
+		name = "Sol"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Mercury"
+		class = "pc_molten"
+		orbit_distance = 40
+		orbit_angle = 15
+		size = 10
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Venus"
+		class = "pc_toxic"
+		orbit_distance = 20
+		orbit_angle = 125
+		size = 20
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Earth"
+		class = "pc_continental"
+		orbit_distance = 20
+		orbit_angle = 120
+		size = 16
+		starting_planet = yes
+		has_ring = no
+		entity = "continental_planet_earth_entity"
+		tile_blockers = none
+		modifiers = none
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			random_tile = {
+				limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_1"
+				add_resource = {
+					resource = food
+					amount = 1
+					replace = yes
+				}	
+				add_resource = {
+					resource = minerals
+					amount = 1
+				}					
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 1
+						replace = yes
+					}						
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = engineering_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = society_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = physics_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = food
+					amount = 1
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				add_resource = {
+					resource = food
+					amount = 1
+					replace = yes
+				}				
+			}			
+		}
+		
+		moon = {
+			name = "Luna"
+			class = "pc_barren_cold"
+			size = 5
+			orbit_distance = 12
+			orbit_angle = 40
+			has_ring = no
+			entity = "cold_barren_planet_luna_entity"
+		}
+	}
+	
+	planet = {
+		name = "Mars"
+		class = "pc_barren"
+		orbit_distance = 20
+		orbit_angle = 60
+		size = 15
+		has_ring = no
+		entity = "barren_planet_mars_entity"
+	}
+	
+	planet = {
+		name = "1 Ceres"
+		class = "pc_asteroid"
+		orbit_distance = 20
+		orbit_angle = -210
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "2 Pallas"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -95
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "3 Juno"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = 285
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "4 Vesta"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Jupiter"
+		class = "pc_gas_giant"
+		orbit_distance = 30
+		orbit_angle = -160
+		size = 35
+		has_ring = no
+		entity = "gas_giant_jupiter_entity"
+		change_orbit = 6
+		
+		moon = {
+			name = "Io"
+			class = "pc_molten"
+			size = 6
+			orbit_distance = 10
+			orbit_angle = 110
+			has_ring = no
+		}
+		moon = {
+			name = "Europa"
+			class = "pc_frozen"
+			size = 6
+			orbit_distance = 2.5
+			orbit_angle = 10
+			has_ring = no
+		}
+		moon = {
+			name = "Ganymede"
+			class = "pc_frozen"
+			size = 9
+			orbit_distance = 2.5
+			orbit_angle = 80
+			has_ring = no
+		}
+		moon = {
+			name = "Callisto"
+			class = "pc_frozen"
+			size = 7
+			orbit_distance = 2.5
+			orbit_angle = -155
+			has_ring = no
+		}
+	}
+	
+	planet = {
+		name = "Saturn"
+		class = "pc_gas_giant"
+		orbit_distance = 20
+		orbit_angle = 170
+		size = 30
+		has_ring = yes
+		entity = "gas_giant_05_entity"
+		change_orbit = 7
+		
+		moon = {
+			name = "Titan"
+			class = "pc_frozen"
+			size = 8
+			orbit_distance = 12
+			orbit_angle = 320
+			has_ring = no
+		}
+	}
+	
+	planet = {
+		name = "Uranus"
+		class = "pc_gas_giant"
+		orbit_distance = 20
+		orbit_angle = 125
+		size = 20
+		has_ring = no
+		entity = "gas_giant_03_entity"
+	}
+	
+	planet = {
+		name = "Neptune"
+		class = "pc_gas_giant"
+		orbit_distance = 20
+		orbit_angle = -195
+		size = 20
+		has_ring = no
+		entity = "gas_giant_02_entity"
+		change_orbit = 4
+		
+		moon = {
+			name = "Triton"
+			class = "pc_frozen"
+			size = 6
+			orbit_distance = 7
+			orbit_angle = 115
+			has_ring = no
+		}
+	}
+	
+	neighbor_system = {
+		distance = { min = 5 max = @distance }		
+		initializer = "mod-ies_sol-alternate-neighbors_neighbor_t1"
+	}
+	neighbor_system = {
+		distance = { min = 4 max = @distance }		
+		initializer = "mod-ies_sol-alternate-neighbors_neighbor_t1_first_colony"
+	}
+}
+
+# Sol Neighbor Tier 1
+mod-ies_sol-alternate-neighbors_neighbor_t1 = {
+	name = "Wolf 359"
+	class = sc_m
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 20
+	}
+	
+	neighbor_system = {
+		distance = { min = 3 max = @distance }		
+		initializer = "mod-ies_sol-alternate-neighbors_neighbor_t2_second_colony"
+	}
+}
+
+# Neighbor Tier 1 First Colony
+mod-ies_sol-alternate-neighbors_neighbor_t1_first_colony = {	
+	name = "Alpha Centauri"
+	class = sc_g
+
+	planet = {
+		name = "Alpha Centauri A"
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 25
+		class = ideal_planet_class
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 12 max = 18 }
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 25
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {			
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	neighbor_system = {
+		distance = { min = 3 max = @distance }	
+		initializer = "mod-ies_sol-alternate-neighbors_neighbor_t2"
+	}
+}
+
+
+# Sol Neighbor Tier 2
+mod-ies_sol-alternate-neighbors_neighbor_t2 = {
+	name = "Procyon"
+	class = sc_f
+	asteroids_distance = 70
+
+	planet = {
+		name = "Procyon A"
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 45
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = { min = 1 max = 3 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 0 max = 360 }
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 25
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {		
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+}
+
+# Sol Neighbor Tier 2 Second Colony
+mod-ies_sol-alternate-neighbors_neighbor_t2_second_colony = {
+	name = "Tau Ceti"
+	class = sc_g
+
+	planet = {
+		name = "Tau Ceti"
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = 2
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 25
+		class = ideal_planet_class
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 14 max = 24 }
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 2
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+}
+
+### Sol System, Nuked Earth
+mod-ies_sol-nuked-earth = {
+	name = "Sol"
+	
+	class = "sc_g"
+	asteroids_distance = 120
+	flags = { sol_system sol }
+	
+	usage = custom_empire
+	
+	planet = {
+		name = "Sol"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Mercury"
+		class = "pc_molten"
+		orbit_distance = 40
+		orbit_angle = 15
+		size = 10
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Venus"
+		class = "pc_toxic"
+		orbit_distance = 20
+		orbit_angle = 125
+		size = 20
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Earth"
+		class = "pc_continental"
+		orbit_distance = 20
+		orbit_angle = 120
+		size = 16
+		starting_planet = yes
+		has_ring = no
+		entity = "continental_planet_earth_entity"
+		tile_blockers = none
+		
+		init_effect = {
+			add_modifier = {
+				modifier = "mod-ies_irradiated_planet"
+				days = 36500
+			}
+		}
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			random_tile = {
+				limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_1"
+				add_resource = {
+					resource = food
+					amount = 2
+					replace = yes
+				}	
+				add_resource = {
+					resource = minerals
+					amount = 1
+				}					
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 2
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 1
+						replace = yes
+					}						
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_city_ruins"
+				add_resource = {
+					resource = engineering_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_radioactive_wasteland"
+				add_resource = {
+					resource = society_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_radioactive_wasteland"
+				add_resource = {
+					resource = physics_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_city_ruins"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_city_ruins"
+				add_resource = {
+					resource = food
+					amount = 1
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_radioactive_wasteland"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				add_resource = {
+					resource = food
+					amount = 1
+					replace = yes
+				}				
+			}			
+		}
+		
+		moon = {
+			name = "Luna"
+			class = "pc_barren_cold"
+			size = 5
+			orbit_distance = 12
+			orbit_angle = 40
+			has_ring = no
+			entity = "cold_barren_planet_luna_entity"
+		}
+	}
+	
+	planet = {
+		name = "Mars"
+		class = "pc_barren"
+		orbit_distance = 20
+		orbit_angle = 60
+		size = 15
+		has_ring = no
+		entity = "barren_planet_mars_entity"
+	}
+	
+	planet = {
+		name = "1 Ceres"
+		class = "pc_asteroid"
+		orbit_distance = 20
+		orbit_angle = -210
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "2 Pallas"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -95
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "3 Juno"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = 285
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "4 Vesta"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Jupiter"
+		class = "pc_gas_giant"
+		orbit_distance = 30
+		orbit_angle = -160
+		size = 35
+		has_ring = no
+		entity = "gas_giant_jupiter_entity"
+		change_orbit = 6
+		
+		moon = {
+			name = "Io"
+			class = "pc_molten"
+			size = 6
+			orbit_distance = 10
+			orbit_angle = 110
+			has_ring = no
+		}
+		moon = {
+			name = "Europa"
+			class = "pc_frozen"
+			size = 6
+			orbit_distance = 2.5
+			orbit_angle = 10
+			has_ring = no
+		}
+		moon = {
+			name = "Ganymede"
+			class = "pc_frozen"
+			size = 9
+			orbit_distance = 2.5
+			orbit_angle = 80
+			has_ring = no
+		}
+		moon = {
+			name = "Callisto"
+			class = "pc_frozen"
+			size = 7
+			orbit_distance = 2.5
+			orbit_angle = -155
+			has_ring = no
+		}
+	}
+	
+	planet = {
+		name = "Saturn"
+		class = "pc_gas_giant"
+		orbit_distance = 20
+		orbit_angle = 170
+		size = 30
+		has_ring = yes
+		entity = "gas_giant_05_entity"
+		change_orbit = 7
+		
+		moon = {
+			name = "Titan"
+			class = "pc_frozen"
+			size = 8
+			orbit_distance = 12
+			orbit_angle = 320
+			has_ring = no
+		}
+	}
+	
+	planet = {
+		name = "Uranus"
+		class = "pc_gas_giant"
+		orbit_distance = 20
+		orbit_angle = 125
+		size = 20
+		has_ring = no
+		entity = "gas_giant_03_entity"
+	}
+	
+	planet = {
+		name = "Neptune"
+		class = "pc_gas_giant"
+		orbit_distance = 20
+		orbit_angle = -195
+		size = 20
+		has_ring = no
+		entity = "gas_giant_02_entity"
+		change_orbit = 4
+		
+		moon = {
+			name = "Triton"
+			class = "pc_frozen"
+			size = 6
+			orbit_distance = 7
+			orbit_angle = 115
+			has_ring = no
+		}
+	}
+	
+	neighbor_system = {
+		distance = { min = 5 max = @distance }		
+		initializer = "mod-ies_sol-nuked-earth_neighbor_t1"
+	}
+	neighbor_system = {
+		distance = { min = 4 max = @distance }		
+		initializer = "mod-ies_sol-nuked-earth_neighbor_t1_first_colony"
+	}
+}
+
+# Sol Neighbor Tier 1
+mod-ies_sol-nuked-earth_neighbor_t1 = {
+	name = "Wolf 359"
+	class = sc_m
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 20
+	}
+	
+	neighbor_system = {
+		distance = { min = 3 max = @distance }		
+		initializer = "mod-ies_sol-nuked-earth_neighbor_t2_second_colony"
+	}
+}
+
+# Neighbor Tier 1 First Colony
+mod-ies_sol-nuked-earth_neighbor_t1_first_colony = {	
+	name = "Alpha Centauri"
+	class = sc_g
+
+	planet = {
+		name = "Alpha Centauri A"
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 25
+		class = ideal_planet_class
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 12 max = 18 }
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 25
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {			
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	neighbor_system = {
+		distance = { min = 3 max = @distance }	
+		initializer = "mod-ies_sol-nuked-earth_neighbor_t2"
+	}
+}
+
+
+# Sol Neighbor Tier 2
+mod-ies_sol-nuked-earth_neighbor_t2 = {
+	name = "Procyon"
+	class = sc_f
+	asteroids_distance = 70
+
+	planet = {
+		name = "Procyon A"
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 45
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = { min = 1 max = 3 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 0 max = 360 }
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 25
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {		
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+}
+
+# Sol Neighbor Tier 2 Second Colony
+mod-ies_sol-nuked-earth_neighbor_t2_second_colony = {
+	name = "Tau Ceti"
+	class = sc_g
+
+	planet = {
+		name = "Tau Ceti"
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = 2
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 25
+		class = ideal_planet_class
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 14 max = 24 }
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 2
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+}
+
+### Sol System, Mars (Tomb Earth)
+mod-ies_sol-mars = {
+	name = "Sol"
+	
+	class = "sc_g"
+	asteroids_distance = 120
+	flags = { sol_system sol }
+	
+	usage = custom_empire
+	
+	planet = {
+		name = "Sol"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Mercury"
+		class = "pc_molten"
+		orbit_distance = 40
+		orbit_angle = 15
+		size = 10
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Venus"
+		class = "pc_toxic"
+		orbit_distance = 20
+		orbit_angle = 125
+		size = 20
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Old Earth"
+		class = "pc_nuked"
+		orbit_distance = 20
+		orbit_angle = 120
+		size = 16
+		has_ring = no
+		entity = "continental_planet_earth_entity"
+		tile_blockers = none
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_city_ruins"
+				add_resource = {
+					resource = physics_research
+					amount = 2
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_city_ruins"
+				add_resource = {
+					resource = society_research
+					amount = 2
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_city_ruins"
+				add_resource = {
+					resource = engineering_research
+					amount = 2
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_radioactive_wasteland"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_radioactive_wasteland"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_radioactive_wasteland"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}				
+			}
+		}
+		
+		moon = {
+			name = "Luna"
+			class = "pc_barren_cold"
+			size = 5
+			orbit_distance = 12
+			orbit_angle = 40
+			has_ring = no
+			entity = "cold_barren_planet_luna_entity"
+		}
+	}
+	
+	planet = {
+		name = "Mars"
+		class = "pc_desert"
+		orbit_distance = 20
+		orbit_angle = 60
+		size = 12		
+		starting_planet = yes
+		has_ring = no
+		entity = "barren_planet_mars_entity"
+		tile_blockers = none
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			random_tile = {
+				limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_1"
+				add_resource = {
+					resource = food
+					amount = 2
+					replace = yes
+				}	
+				add_resource = {
+					resource = minerals
+					amount = 1
+				}					
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 2
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 1
+						replace = yes
+					}						
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "mod-ies_tb_chaos_terrain"
+				add_resource = {
+					resource = engineering_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "mod-ies_tb_chaos_terrain"
+				add_resource = {
+					resource = society_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "mod-ies_tb_chaos_terrain"
+				add_resource = {
+					resource = physics_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "mod-ies_tb_chaos_terrain"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				add_resource = {
+					resource = food
+					amount = 1
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				add_resource = {
+					resource = food
+					amount = 1
+					replace = yes
+				}				
+			}			
+		}
+	}
+	
+	planet = {
+		name = "1 Ceres"
+		class = "pc_asteroid"
+		orbit_distance = 20
+		orbit_angle = -210
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "2 Pallas"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -95
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "3 Juno"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = 285
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "4 Vesta"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Jupiter"
+		class = "pc_gas_giant"
+		orbit_distance = 30
+		orbit_angle = -160
+		size = 35
+		has_ring = no
+		entity = "gas_giant_jupiter_entity"
+		change_orbit = 6
+		
+		moon = {
+			name = "Io"
+			class = "pc_molten"
+			size = 6
+			orbit_distance = 10
+			orbit_angle = 110
+			has_ring = no
+		}
+		moon = {
+			name = "Europa"
+			class = "pc_frozen"
+			size = 6
+			orbit_distance = 2.5
+			orbit_angle = 10
+			has_ring = no
+		}
+		moon = {
+			name = "Ganymede"
+			class = "pc_frozen"
+			size = 9
+			orbit_distance = 2.5
+			orbit_angle = 80
+			has_ring = no
+		}
+		moon = {
+			name = "Callisto"
+			class = "pc_frozen"
+			size = 7
+			orbit_distance = 2.5
+			orbit_angle = -155
+			has_ring = no
+		}
+	}
+	
+	planet = {
+		name = "Saturn"
+		class = "pc_gas_giant"
+		orbit_distance = 20
+		orbit_angle = 170
+		size = 30
+		has_ring = yes
+		entity = "gas_giant_05_entity"
+		change_orbit = 7
+		
+		moon = {
+			name = "Titan"
+			class = "pc_frozen"
+			size = 8
+			orbit_distance = 12
+			orbit_angle = 320
+			has_ring = no
+		}
+	}
+	
+	planet = {
+		name = "Uranus"
+		class = "pc_gas_giant"
+		orbit_distance = 20
+		orbit_angle = 125
+		size = 20
+		has_ring = no
+		entity = "gas_giant_03_entity"
+	}
+	
+	planet = {
+		name = "Neptune"
+		class = "pc_gas_giant"
+		orbit_distance = 20
+		orbit_angle = -195
+		size = 20
+		has_ring = no
+		entity = "gas_giant_02_entity"
+		change_orbit = 4
+		
+		moon = {
+			name = "Triton"
+			class = "pc_frozen"
+			size = 6
+			orbit_distance = 7
+			orbit_angle = 115
+			has_ring = no
+		}
+	}
+	
+	neighbor_system = {
+		distance = { min = 5 max = @distance }		
+		initializer = "mod-ies_sol-mars_neighbor_t1"
+	}
+	neighbor_system = {
+		distance = { min = 4 max = @distance }		
+		initializer = "mod-ies_sol-mars_neighbor_t1_first_colony"
+	}
+}
+
+# Sol Neighbor Tier 1
+mod-ies_sol-mars_neighbor_t1 = {
+	name = "Wolf 359"
+	class = sc_m
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 20
+	}
+	
+	neighbor_system = {
+		distance = { min = 3 max = @distance }		
+		initializer = "mod-ies_sol-mars_neighbor_t2_second_colony"
+	}
+}
+
+# Neighbor Tier 1 First Colony
+mod-ies_sol-mars_neighbor_t1_first_colony = {	
+	name = "Alpha Centauri"
+	class = sc_g
+
+	planet = {
+		name = "Alpha Centauri A"
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 25
+		class = ideal_planet_class
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 12 max = 18 }
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 25
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {			
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	neighbor_system = {
+		distance = { min = 3 max = @distance }	
+		initializer = "mod-ies_sol-mars_neighbor_t2"
+	}
+}
+
+
+# Sol Neighbor Tier 2
+mod-ies_sol-mars_neighbor_t2 = {
+	name = "Procyon"
+	class = sc_f
+	asteroids_distance = 70
+
+	planet = {
+		name = "Procyon A"
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 45
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = { min = 1 max = 3 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 0 max = 360 }
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 25
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {		
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+}
+
+# Sol Neighbor Tier 2 Second Colony
+mod-ies_sol-mars_neighbor_t2_second_colony = {
+	name = "Tau Ceti"
+	class = sc_g
+
+	planet = {
+		name = "Tau Ceti"
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = 2
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 25
+		class = ideal_planet_class
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 14 max = 24 }
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 2
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+}
+
+### Sol, Russian Names
+mod-ies_solntse = {
+	name = "Sol"
+	
+	class = "sc_g"
+	asteroids_distance = 120
+	flags = { sol_system sol }
+	
+	usage = custom_empire
+	
+	planet = {
+		name = "Solntse"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Merkuriy"
+		class = "pc_molten"
+		orbit_distance = 40
+		orbit_angle = 15
+		size = 10
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Venera"
+		class = "pc_toxic"
+		orbit_distance = 20
+		orbit_angle = 125
+		size = 20
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Zemlya"
+		class = "pc_continental"
+		orbit_distance = 20
+		orbit_angle = 120
+		size = 16
+		starting_planet = yes
+		has_ring = no
+		entity = "continental_planet_earth_entity"
+		tile_blockers = none
+		modifiers = none
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			random_tile = {
+				limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_1"
+				add_resource = {
+					resource = food
+					amount = 1
+					replace = yes
+				}	
+				add_resource = {
+					resource = minerals
+					amount = 1
+				}					
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 1
+						replace = yes
+					}						
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = engineering_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = society_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = physics_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = food
+					amount = 1
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				add_resource = {
+					resource = food
+					amount = 1
+					replace = yes
+				}				
+			}			
+		}
+		
+		moon = {
+			name = "Luna"
+			class = "pc_barren_cold"
+			size = 5
+			orbit_distance = 12
+			orbit_angle = 40
+			has_ring = no
+			entity = "cold_barren_planet_luna_entity"
+		}
+	}
+	
+	planet = {
+		name = "Mars"
+		class = "pc_barren"
+		orbit_distance = 20
+		orbit_angle = 60
+		size = 15
+		has_ring = no
+		entity = "barren_planet_mars_entity"
+	}
+	
+	planet = {
+		name = "Tserera"
+		class = "pc_asteroid"
+		orbit_distance = 20
+		orbit_angle = -210
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Pallas"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -95
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Yunona"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = 285
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Vesta"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Yupiter"
+		class = "pc_gas_giant"
+		orbit_distance = 30
+		orbit_angle = -160
+		size = 35
+		has_ring = no
+		entity = "gas_giant_jupiter_entity"
+		change_orbit = 6
+		
+		moon = {
+			name = "Io"
+			class = "pc_molten"
+			size = 6
+			orbit_distance = 10
+			orbit_angle = 110
+			has_ring = no
+		}
+		moon = {
+			name = "Europa"
+			class = "pc_frozen"
+			size = 6
+			orbit_distance = 2.5
+			orbit_angle = 10
+			has_ring = no
+		}
+		moon = {
+			name = "Ganimed"
+			class = "pc_frozen"
+			size = 9
+			orbit_distance = 2.5
+			orbit_angle = 80
+			has_ring = no
+		}
+		moon = {
+			name = "Callisto"
+			class = "pc_frozen"
+			size = 7
+			orbit_distance = 2.5
+			orbit_angle = -155
+			has_ring = no
+		}
+	}
+	
+	planet = {
+		name = "Saturn"
+		class = "pc_gas_giant"
+		orbit_distance = 20
+		orbit_angle = 170
+		size = 30
+		has_ring = yes
+		entity = "gas_giant_05_entity"
+		change_orbit = 7
+		
+		moon = {
+			name = "Titan"
+			class = "pc_frozen"
+			size = 8
+			orbit_distance = 12
+			orbit_angle = 320
+			has_ring = no
+		}
+	}
+	
+	planet = {
+		name = "Uran"
+		class = "pc_gas_giant"
+		orbit_distance = 20
+		orbit_angle = 125
+		size = 20
+		has_ring = no
+		entity = "gas_giant_03_entity"
+	}
+	
+	planet = {
+		name = "Neptun"
+		class = "pc_gas_giant"
+		orbit_distance = 20
+		orbit_angle = -195
+		size = 20
+		has_ring = no
+		entity = "gas_giant_02_entity"
+		change_orbit = 4
+		
+		moon = {
+			name = "Triton"
+			class = "pc_frozen"
+			size = 6
+			orbit_distance = 7
+			orbit_angle = 115
+			has_ring = no
+		}
+	}
+	
+	neighbor_system = {
+		distance = { min = 10 max = @distance }	
+		initializer = "mod-ies_solntse_neighbor_t1"
+	}
+	neighbor_system = {
+		distance = { min = 10 max = @distance }	
+		initializer = "mod-ies_solntse_neighbor_t1_first_colony"
+	}
+}
+
+# Sol Neighbor Tier 1
+mod-ies_solntse_neighbor_t1 = {
+	name = "Zvezda Naroda"
+	class = sc_m
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 20
+	}
+	
+	neighbor_system = {
+		distance = { min = 10 max = @distance }	
+		initializer = "mod-ies_solntse_neighbor_t2_second_colony"
+	}
+}
+
+# Neighbor Tier 1 First Colony
+mod-ies_solntse_neighbor_t1_first_colony = {	
+	name = "Alfa Tsentavra"
+	class = sc_g
+
+	planet = {
+		name = "Alfa Tsentavra A"
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 25
+		class = ideal_planet_class
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 12 max = 18 }
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 25
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {			
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	neighbor_system = {
+		distance = { min = 10 max = @distance }	
+		initializer = "mod-ies_solntse_neighbor_t2"
+	}
+}
+
+
+# Sol Neighbor Tier 2
+mod-ies_solntse_neighbor_t2 = {
+	name = "Protsion"
+	class = sc_f
+	asteroids_distance = 70
+
+	planet = {
+		name = "Protsion A"
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 45
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = { min = 1 max = 3 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 0 max = 360 }
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 25
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {		
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+}
+
+# Sol Neighbor Tier 2 Second Colony
+mod-ies_solntse_neighbor_t2_second_colony = {
+	name = "Sirius"
+	class = sc_a
+
+	planet = {
+		name = "Sirius A"
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = 2
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 25
+		class = ideal_planet_class
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 14 max = 24 }
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 2
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+}
+
+### Sol System, Jovian Exodus
+mod-ies_sol-jovian-exodus = {
+	name = "Sol"
+	
+	class = "sc_m"
+	asteroids_distance = 120
+	flags = { sol_system sol }
+	
+	usage = custom_empire
+	
+	planet = {
+		name = "Sol"
+		class = "pc_m_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 100
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Aphrodite Core"
+		class = "pc_molten"
+		orbit_distance = 60
+		orbit_angle = 125
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Earth-That-Was"
+		class = "pc_molten"
+		orbit_distance = 20
+		orbit_angle = 120
+		has_ring = yes
+		tile_blockers = none
+		modifiers = none
+
+		init_effect = {
+			prevent_anomaly = yes
+		}		
+	}
+	
+	planet = {
+		name = "Ares"
+		class = "pc_barren"
+		orbit_distance = 20
+		orbit_angle = 60
+		size = 15
+		has_ring = no
+	}
+	
+	planet = {
+		name = "1 Ceres"
+		class = "pc_asteroid"
+		orbit_distance = 20
+		orbit_angle = -210
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "2 Pallas"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -95
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "3 Juno"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = 285
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "4 Vesta"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "Jupiter"
+		class = "pc_gas_giant"
+		orbit_distance = 30
+		orbit_angle = -160
+		size = 35
+		has_ring = no
+		entity = "gas_giant_jupiter_entity"
+		change_orbit = 6
+		
+		moon = {
+			name = "Io"
+			class = "pc_molten"
+			size = 6
+			orbit_distance = 10
+			orbit_angle = 110
+			has_ring = no
+		}
+		moon = {
+			name = "Europa"
+			class = "pc_arctic"
+			size = 6
+			orbit_distance = 2.5
+			orbit_angle = 10
+			has_ring = no
+		}
+		moon = {
+			name = "Ganymede"
+			class = "pc_arctic"
+			size = 12
+			orbit_distance = 2.5
+			orbit_angle = 80
+			has_ring = no
+			starting_planet = yes
+			tile_blockers = none
+			modifiers = none
+			
+			init_effect = {
+			prevent_anomaly = yes
+			}
+			
+			init_effect = {
+				random_tile = {
+					limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+					set_building = "building_capital_1"
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}	
+					add_resource = {
+						resource = minerals
+						amount = 1
+					}					
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_hydroponics_farm_1"
+						add_resource = {
+							resource = food
+							amount = 1
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_power_plant_1"
+						add_resource = {
+							resource = energy
+							amount = 1
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_power_plant_1"
+						add_resource = {
+							resource = energy
+							amount = 1
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_mining_network_1"
+						add_resource = {
+							resource = minerals
+							amount = 1
+							replace = yes
+						}						
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					add_resource = {
+						resource = engineering_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					add_resource = {
+						resource = society_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					add_resource = {
+						resource = physics_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					add_resource = {
+						resource = energy
+						amount = 2
+						replace = yes
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}				
+				}			
+			}
+		}
+		moon = {
+			name = "Callisto"
+			class = "pc_arctic"
+			size = 10
+			orbit_distance = 2.5
+			orbit_angle = -155
+			has_ring = no
+		}
+	}
+	
+	planet = {
+		name = "Saturn"
+		class = "pc_gas_giant"
+		orbit_distance = 20
+		orbit_angle = 170
+		size = 30
+		has_ring = yes
+		entity = "gas_giant_05_entity"
+		change_orbit = 7
+		
+		moon = {
+			name = "Titan"
+			class = "pc_frozen"
+			size = 8
+			orbit_distance = 12
+			orbit_angle = 320
+			has_ring = no
+		}
+	}
+	
+	planet = {
+		name = "Uranus"
+		class = "pc_gas_giant"
+		orbit_distance = 20
+		orbit_angle = 125
+		size = 20
+		has_ring = no
+		entity = "gas_giant_03_entity"
+	}
+	
+	planet = {
+		name = "Neptune"
+		class = "pc_gas_giant"
+		orbit_distance = 20
+		orbit_angle = -195
+		size = 20
+		has_ring = no
+		entity = "gas_giant_02_entity"
+		change_orbit = 4
+		
+		moon = {
+			name = "Triton"
+			class = "pc_frozen"
+			size = 6
+			orbit_distance = 7
+			orbit_angle = 115
+			has_ring = no
+		}
+	}
+	
+	neighbor_system = {
+		distance = { min = 5 max = @distance }		
+		initializer = "mod-ies_sol-jovian-exodus_neighbor_t1"
+	}
+	neighbor_system = {
+		distance = { min = 4 max = @distance }		
+		initializer = "mod-ies_sol-jovian-exodus_neighbor_t1_first_colony"
+	}
+}
+
+# Sol Neighbor Tier 1
+mod-ies_sol-jovian-exodus_neighbor_t1 = {
+	name = "Wolf 359"
+	class = sc_m
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 20
+	}
+	
+	neighbor_system = {
+		distance = { min = 3 max = @distance }		
+		initializer = "mod-ies_sol-jovian-exodus_neighbor_t2_second_colony"
+	}
+}
+
+# Neighbor Tier 1 First Colony
+mod-ies_sol-jovian-exodus_neighbor_t1_first_colony = {	
+	name = "Alpha Centauri"
+	class = sc_g
+
+	planet = {
+		name = "Alpha Centauri A"
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 25
+		class = ideal_planet_class
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 12 max = 18 }
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 25
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {			
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	neighbor_system = {
+		distance = { min = 3 max = @distance }	
+		initializer = "mod-ies_sol-jovian-exodus_neighbor_t2"
+	}
+}
+
+
+# Sol Neighbor Tier 2
+mod-ies_sol-jovian-exodus_neighbor_t2 = {
+	name = "Procyon"
+	class = sc_f
+	asteroids_distance = 70
+
+	planet = {
+		name = "Procyon A"
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 45
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = { min = 1 max = 3 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 0 max = 360 }
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 25
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {		
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+}
+
+# Sol Neighbor Tier 2 Second Colony
+mod-ies_sol-jovian-exodus_neighbor_t2_second_colony = {
+	name = "Tau Ceti"
+	class = sc_g
+
+	planet = {
+		name = "Tau Ceti"
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = 2
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 25
+		class = ideal_planet_class
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 14 max = 24 }
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 2
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+}

@@ -1,0 +1,329 @@
+
+# Mining League
+mining_league = {
+	potential = {
+		hidden_trigger = { NOT = { is_country_type = fallen_empire } }
+	}
+
+	ethics = {
+
+		OR = {
+			has_ethic = "ethic_industrial"
+			has_ethic = "ethic_fanatic_industrial"
+		}
+
+		NOT = { has_ethic = "ethic_fanatic_collectivist" }
+		NOT = { has_ethic = "ethic_fanatic_individualist" }
+	}
+	
+	modifier = {
+                      tile_resource_minerals_mult = 0.15
+                      max_minerals = 2000
+                      shipsize_mining_station_build_cost_mult = -0.2
+                      building_mining_network_1_build_cost_mult = -0.2
+                      category_industry_research_speed_mult = 0.2
+                      category_materials_research_speed_mult = 0.2
+
+                
+	}
+	
+	election_term_years = 30
+	election_term_variance = 5 # +/- 5 years
+	election_type = oligarchic
+	can_have_emergency_elections = yes
+	emergency_election_cost = 200
+	has_agendas = yes
+	
+	max_election_candidates = 4
+	election_candidates = {
+		modifier = {
+			add = 1000
+			OR = {
+				leader_class = ruler
+				AND = {
+					exists = pop_faction
+					pop_faction = {
+						is_scope_valid = yes
+						is_pop_faction_type = loyalist
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 100
+			leader_class = governor
+		}
+	}
+	
+	ruler_title = RT_CEO_1
+	upgrade = mining_conglomerate
+}
+
+
+
+# Advanced Mining League
+mining_conglomerate = {
+	prerequisites = { "tech_galactic_administration" }
+	
+	potential = {
+		hidden_trigger = { NOT = { is_country_type = fallen_empire } }
+	}
+
+	ethics = {
+
+		OR = {
+			has_ethic = "ethic_industrial"
+			has_ethic = "ethic_fanatic_industrial"
+		}
+
+		NOT = { has_ethic = "ethic_fanatic_collectivist" }
+		NOT = { has_ethic = "ethic_fanatic_individualist" }
+	}
+	
+	modifier = {
+
+                      tile_resource_minerals_mult = 0.3
+                      max_minerals = 4000
+                      shipsize_mining_station_build_cost_mult = -0.4
+                      building_mining_network_1_build_cost_mult = -0.4
+                      category_industry_research_speed_mult = 0.4
+                      category_materials_research_speed_mult = 0.4
+
+	}
+	
+	election_term_years = 25
+	election_term_variance = 5 # +/- 5 years
+	election_type = oligarchic
+	can_have_emergency_elections = yes
+	emergency_election_cost = 200
+	has_agendas = yes
+	
+	max_election_candidates = 4
+	election_candidates = {
+		modifier = {
+			add = 1000
+			OR = {
+				leader_class = ruler
+				AND = {
+					exists = pop_faction
+					pop_faction = {
+						is_scope_valid = yes
+						is_pop_faction_type = loyalist
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 100
+			leader_class = governor
+		}
+	}
+	
+	ruler_title = RT_CEO_1
+	
+	pickable_at_start = no
+}
+
+
+
+
+
+# Eco Democracy
+eco_democracy = {
+	potential = {
+		hidden_trigger = { NOT = { is_country_type = fallen_empire } }
+	}
+
+	ethics = {
+		OR = {
+			has_ethic = "ethic_green"
+			has_ethic = "ethic_fanatic_green"
+		}
+		
+		OR = {
+			has_ethic = "ethic_spiritualist"
+			has_ethic = "ethic_fanatic_spiritualist"
+		}
+
+		OR = {
+			has_ethic = "ethic_individualist"
+			has_ethic = "ethic_fanatic_individualist"
+		}
+
+	}
+	
+	modifier = {
+
+                           pop_peace_happiness = 0.05
+						   pop_ethic_shift = -0.05
+                           terraforming_cost_mult = -0.25
+                           shipsize_terraform_station_build_cost_mult = -0.25
+                           category_biology_research_speed_mult = 0.2
+                           category_new_worlds_research_speed_mult = 0.2
+                           trait_points = 1
+                
+	}
+	
+	uses_mandates = yes
+	election_term_years = 10
+	re_election_allowed = yes
+	election_type = democratic
+	
+	ruler_title = RT_WARDEN
+	upgrade = eco_utopia
+}
+
+
+
+
+# Advanced Eco Democracy
+eco_utopia = {
+	prerequisites = { "tech_galactic_administration" }
+	
+	potential = {
+		hidden_trigger = { NOT = { is_country_type = fallen_empire } }
+	}
+
+	ethics = {
+		OR = {
+			has_ethic = "ethic_green"
+			has_ethic = "ethic_fanatic_green"
+		}
+
+		OR = {
+			has_ethic = "ethic_spiritualist"
+			has_ethic = "ethic_fanatic_spiritualist"
+		}		
+
+		OR = {
+			has_ethic = "ethic_individualist"
+			has_ethic = "ethic_fanatic_individualist"
+		}
+
+	}
+	
+	modifier = {
+	                       pop_peace_happiness = 0.1
+						   pop_ethic_shift = -0.1
+                           terraforming_cost_mult = -0.5
+                           shipsize_terraform_station_build_cost_mult = -0.5
+                           category_biology_research_speed_mult = 0.4
+                           category_new_worlds_research_speed_mult = 0.4
+                           trait_points = 2
+	}
+	
+	uses_mandates = yes
+	election_term_years = 10
+	re_election_allowed = yes
+	election_type = democratic
+	
+	ruler_title = RT_WARDEN
+	
+	pickable_at_start = no
+}
+
+
+
+# Xenophopic Autocracy
+xeno_fascism = {
+	has_heir = yes
+	use_regnal_names = no
+	dynastic_last_names = no
+	
+	potential = {
+		hidden_trigger = { NOT = { is_country_type = fallen_empire } }
+	}
+
+	ethics = {
+	
+		OR = {
+			has_ethic = "ethic_xenophobe"
+			has_ethic = "ethic_fanatic_xenophobe"
+		}
+		
+		OR = {
+			has_ethic = "ethic_isolationist"
+			has_ethic = "ethic_fanatic_isolationist"
+		}
+		
+		OR = {
+			has_ethic = "ethic_militarist"
+			has_ethic = "ethic_fanatic_militarist"
+		}
+
+		OR = {
+			has_ethic = "ethic_collectivist"
+			has_ethic = "ethic_fanatic_collectivist"
+		}
+	}
+	
+	modifier = {
+		       shipclass_military_station_build_cost_mult = -0.15
+		       shipclass_military_station_damage_mult = 0.15
+			   shipclass_military_station_hit_points_mult = 0.15
+		       shipsize_military_station_small_upkeep_mult = -0.15
+		       shipsize_military_station_medium_upkeep_mult = -0.15
+		       shipsize_military_station_large_upkeep_mult = -0.15
+		       planet_fortification_strength = 0.15
+                       planet_sensor_range_mult = 0.25
+
+
+	}
+	
+	ruler_title = RT_CHIEF
+	heir_title = HT_DEFMINISTER
+	upgrade = unified_empire
+}
+
+# Advanced Xenophobic Autocracy
+unified_empire = {
+	prerequisites = { "tech_galactic_administration" }
+	has_heir = yes
+	use_regnal_names = no
+	dynastic_last_names = no
+	
+	potential = {
+		hidden_trigger = { NOT = { is_country_type = fallen_empire } }
+	}
+
+	ethics = {
+		OR = {
+			has_ethic = "ethic_xenophobe"
+			has_ethic = "ethic_fanatic_xenophobe"
+		}
+		
+		OR = {
+			has_ethic = "ethic_isolationist"
+			has_ethic = "ethic_fanatic_isolationist"
+		}
+		
+		OR = {
+			has_ethic = "ethic_militarist"
+			has_ethic = "ethic_fanatic_militarist"
+		}		
+
+		OR = {
+			has_ethic = "ethic_collectivist"
+			has_ethic = "ethic_fanatic_collectivist"
+		}
+	}
+	
+	modifier = {
+		       shipclass_military_station_build_cost_mult = -0.3
+		       shipclass_military_station_damage_mult = 0.3
+			   shipclass_military_station_hit_points_mult = 0.3
+		       shipsize_military_station_small_upkeep_mult = -0.3
+		       shipsize_military_station_medium_upkeep_mult = -0.3
+		       shipsize_military_station_large_upkeep_mult = -0.3
+		       planet_fortification_strength = 0.3
+                       planet_sensor_range_mult = 0.5
+
+	}
+	
+	ruler_title = RT_KEEPER
+	heir_title = HT_COUNS
+	
+	pickable_at_start = no
+}
+
+

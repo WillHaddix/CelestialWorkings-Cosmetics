@@ -1,0 +1,18 @@
+### Planet Modifiers
+
+
+mod-ies_pm_irradiated = {
+	spawn_chance = {
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_irradiated"
+		}
+		
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	
+	modifier = "mod-ies_irradiated_planet"
+}

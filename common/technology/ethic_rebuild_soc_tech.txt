@@ -1,0 +1,410 @@
+##################
+### TECH COSTS ###
+##################
+#If you change any of these, use replace in files so the values are the same across all files
+
+@tier1cost1 = 240
+@tier1cost2 = 360
+@tier1cost3 = 480
+@tier1cost4 = 600
+
+@tier2cost1 = 900
+@tier2cost2 = 1200
+@tier2cost3 = 1500
+@tier2cost4 = 1800
+
+@tier3cost1 = 2320
+@tier3cost2 = 2840
+@tier3cost3 = 3360
+@tier3cost4 = 3880
+
+####################
+### TECH WEIGHTS ###
+####################
+
+@tier1weight1 = 100
+@tier1weight2 = 95
+@tier1weight3 = 90
+@tier1weight4 = 85
+
+@tier2weight1 = 75
+@tier2weight2 = 70
+@tier2weight3 = 65
+@tier2weight4 = 60
+
+@tier3weight1 = 50
+@tier3weight2 = 45
+@tier3weight3 = 40
+@tier3weight4 = 35
+
+
+tech_bioreactor = {
+	cost = @tier2cost2
+	area = society
+	tier = 2
+	category = { industry }
+	prerequisites = { "tech_planetary_unification" }
+	weight = @tier2weight2
+	is_rare = yes
+	
+	#unlocks Bio-processing Plant building
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					has_ethic = ethic_green
+					has_ethic = ethic_fanatic_green
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_green
+		}
+	}	
+	
+	ai_weight = {
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_green
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}	
+	}
+}
+
+
+
+
+
+tech_ministry_of_equality = {
+	cost = @tier2cost2
+	area = society
+	tier = 2
+	category = { statecraft }
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier2weight2
+	is_rare = yes
+
+	
+	# unlocks Ministry of Equality empire wonder
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					has_ethic = ethic_socialism
+					has_ethic = ethic_fanatic_socialism
+				}
+
+			}
+		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_socialism
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_socialism
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
+
+
+
+
+
+tech_new_diplomacy_standarts = {
+	cost = @tier2cost2
+	area = society
+	tier = 2
+	category = { statecraft }
+	prerequisites = { "tech_xeno_diplomacy" "tech_galactic_administration" }
+	weight = @tier2weight2
+	is_rare = yes
+	
+	#unlocks Diplomacy Academy building
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+				}
+			}
+		}
+
+	}	
+	
+	ai_weight = {
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_pacifist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}	
+	}
+}
+
+
+
+
+
+
+tech_multicultural_integration = {
+	cost = @tier2cost2
+	area = society
+	tier = 2
+	category = { statecraft }
+	prerequisites = { "tech_xeno_integration" "tech_galactic_administration" }
+	weight = @tier2weight2
+	is_rare = yes
+	
+	#unlocks Pan-Galactic Forum building
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+
+	}	
+	
+	ai_weight = {
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_xenophile
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}	
+	}
+}
+
+
+
+tech_ministry_of_defence = {
+	cost = @tier2cost2
+	area = society
+	tier = 2
+	category = { military_theory }
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier2weight2
+	is_rare = yes
+
+	
+	#unlocks Ministry of Defence building
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					has_ethic = ethic_isolationist
+					has_ethic = ethic_fanatic_isolationist
+				}
+			}
+		}
+
+	}	
+	
+	ai_weight = {
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_isolationist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_military_theory"
+			}
+		}	
+	}
+}
+
+
+
+
+tech_spirit_freedom = {
+	cost = @tier1cost2
+	area = society
+	tier = 1
+	category = { statecraft }
+	prerequisites = { "tech_colonial_centralization" }
+	weight = @tier1weight2
+
+	
+	#unlocks Spirit of Freedom edict
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					has_ethic = ethic_fanatic_individualist
+				}
+			}
+		}
+
+	}	
+	
+	ai_weight = {
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_individualist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}	
+	}
+}
+
+
+
+
+tech_div_crusade = {
+	cost = @tier2cost2
+	area = society
+	tier = 2
+	category = { statecraft }
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier2weight2
+	is_rare = yes
+
+	
+	#unlocks Divine Crusade edict
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					has_government = sacred_un
+					has_government = div_imperium
+				}
+			}
+		}
+
+	}	
+	
+	ai_weight = {
+		modifier = {
+			factor = 2
+			has_government = div_imperium
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}	
+	}
+}
+
+
+# Terraforming to Gaia 
+tech_terraform_gaia = {
+	area = society
+	cost = @tier3cost4
+	tier = 3
+	category = { new_worlds }
+	prerequisites = { "tech_atmospheric_manipulation" "tech_colonization_3" }
+	weight = @tier3weight4
+	is_rare = yes
+
+	prereqfor_desc = {
+		diplo_action = {
+			title = "TECH_UNLOCK_TERRAFORMING_GAIA_TITLE"
+			desc = "TECH_UNLOCK_TERRAFORMING_GAIA_DESC"
+		}
+	}
+
+
+	weight_modifier = {
+		factor = 0.75
+		
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					has_government = eco_democracy
+					has_government = eco_utopia
+				}
+			}
+		}
+		
+		
+		modifier = {
+			factor = 0.33
+			NOT = {
+				research_leader = {
+					area = society
+					has_trait = "leader_trait_expertise_new_worlds"
+				}
+			}
+		}
+		
+
+	}
+
+	ai_weight = {
+		factor = 5 # rare tech
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+	}
+}
+
+

@@ -1,0 +1,136 @@
+######################################
+####mod ethic rebuild - traditions####
+
+
+ethic_categories = {
+
+	trd = {
+		opinions = { 1 1 1 1 1 }
+	}
+
+
+}
+	
+ethic_land_engineering = {
+	cost = 1
+	category = "trd"
+
+	
+	country_modifier = {
+		planet_building_cost_mult = -0.1
+		building_time_mult = -0.1
+	}
+	
+	
+	random_weight = {
+		value = 25
+	}	
+	
+
+}
+
+
+ethic_space_engineering = {
+	cost = 1
+	category = "trd"
+
+	
+	country_modifier = {
+		spaceport_ship_build_cost_mult = -0.1
+		spaceport_ship_build_time_mult = -0.1
+	}
+	
+	
+	random_weight = {
+		value = 25
+	}	
+	
+
+}
+
+
+
+
+
+ethic_education = {
+	cost = 1
+	category = "trd"
+
+	
+	country_modifier = {
+		species_leader_exp_gain = 0.2
+	}
+	
+	
+	random_weight = {
+		value = 25
+	}	
+	
+
+}
+
+
+ethic_bureaucracy = {
+	cost = 1
+	category = "trd"
+
+	
+	country_modifier = {
+		influence_gain_add = 1
+	}
+	
+	
+	random_weight = {
+		value = 25
+	}	
+	
+
+}
+
+
+
+ethic_robotization = {
+	cost = 1
+	category = "trd"
+
+	
+	country_modifier = {
+		pop_robot_production_output = 0.25
+	}
+	
+	
+	random_weight = {
+		value = 25
+	}	
+	
+
+}
+
+
+ethic_interstellar_travel = {
+	cost = 1
+	category = "trd"
+
+	
+	country_modifier = {
+	
+	    ship_ftl_wormhole_speed_mult = 0.2
+        ship_ftl_wormhole_range_mult = 0.2
+		ship_ftl_jumpdrive_range_mult = 0.2
+		ship_interstellar_speed_mult = 0.2
+        ship_ftl_warp_range_mult = 0.2
+
+ 
+       
+	}
+	
+	
+	random_weight = {
+		value = 25
+	}	
+	
+
+}
+
+
+
