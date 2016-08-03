@@ -1,0 +1,16 @@
+############################################################
+# MAP PING
+#
+# system_entity = entity used in system mode
+# galaxy_entity = entity used in galaxy mode
+# duration 		= time to run ping (-1 = infinite)
+#
+############################################################
+
+outliner_selection = {
+	system_entity 	= "planet_notification_green_entity"
+	galaxy_entity 	= "planet_notification_green_entity"
+	system_normal_zoom = 3000
+	galaxy_normal_zoom = 2500
+	duration		= 3
+}
