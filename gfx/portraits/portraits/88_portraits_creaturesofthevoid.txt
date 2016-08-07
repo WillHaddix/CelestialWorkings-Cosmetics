@@ -1,0 +1,88 @@
+##############################################################
+###	PORTRAITS SETTINGS
+###
+### Which portraits are used is set in 
+### common\species_classes\00_species_classes.txt
+###
+###	This file configures how portraits and planet backgrounds are built.
+###	Default position orientation is lower left.
+##############################################################
+
+
+##############################################################
+### Portraits
+###
+### Ex:
+### mam1 = {
+###		spriteType = "GFX_portrait_mam1"
+###		#OR
+###		texturefile = "gfx/interface/portraits/mammalien_massive_01.dds"
+###		#OR
+###		entity = "portrait_mammalian_06_entity"
+###	}
+
+portraits = {
+	#Modz
+	
+	
+	mam17 = {	entity = "portrait_mammalian_17_entity"	clothes_selector = "mammalian_massive_clothes_01" hair_selector = "no_texture" greeting_sound = "mammalian_01_greetings"
+		character_textures = {
+					"gfx/models/portraits/mammalian/mammalian_massive_17_1.dds"
+					"gfx/models/portraits/mammalian/mammalian_massive_17_2.dds"
+					"gfx/models/portraits/mammalian/mammalian_massive_17_3.dds"
+					"gfx/models/portraits/mammalian/mammalian_massive_17_4.dds"
+					"gfx/models/portraits/void/mammalian_massive_17_2.dds"
+					"gfx/models/portraits/void/mammalian_massive_17_3.dds"
+					"gfx/models/portraits/void/mammalian_massive_17_4.dds"
+		}
+	}
+	
+	avi17 = {	entity = "portrait_avian_17_entity"	clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "avian_01_greetings"
+		character_textures = {
+					"gfx/models/portraits/avian/avian_massive_17_1.dds"
+					"gfx/models/portraits/avian/avian_massive_17_2.dds"
+					"gfx/models/portraits/avian/avian_massive_17_3.dds"
+					"gfx/models/portraits/avian/avian_massive_17_4.dds"
+					"gfx/models/portraits/void/avian_massive_17_2.dds"
+					"gfx/models/portraits/void/avian_massive_17_3.dds"
+					"gfx/models/portraits/void/avian_massive_17_4.dds"
+		}
+	}
+	
+	art17 = {	entity = "portrait_arthropoid_17_entity" clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "arthropoid_01_greetings" 
+			character_textures = {
+					"gfx/models/portraits/arthropoid/arthropoid_massive_017_1.dds"
+					"gfx/models/portraits/arthropoid/arthropoid_massive_017_2.dds"
+					"gfx/models/portraits/arthropoid/arthropoid_massive_017_3.dds"
+					"gfx/models/portraits/arthropoid/arthropoid_massive_017_4.dds"
+					"gfx/models/portraits/void/arthropoid_massive_017_2.dds"
+					"gfx/models/portraits/void/arthropoid_massive_017_3.dds"
+					"gfx/models/portraits/void/arthropoid_massive_017_4.dds"
+					"gfx/models/portraits/void/arthropoid_massive_017_5.dds"
+			}
+	}
+	
+	mol16 = {	entity = "portrait_molluscoid_16_entity" clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "molluscoid_01_greetings" 
+			character_textures = {
+					"gfx/models/portraits/molluscoid/molluscoid_massive_16_1.dds"
+					"gfx/models/portraits/molluscoid/molluscoid_massive_16_2.dds"
+					"gfx/models/portraits/molluscoid/molluscoid_massive_16_3.dds"
+					"gfx/models/portraits/molluscoid/molluscoid_massive_16_4.dds"
+					"gfx/models/portraits/void/molluscoid_massive_16_2.dds"
+					"gfx/models/portraits/void/molluscoid_massive_16_3.dds"
+					"gfx/models/portraits/void/molluscoid_massive_16_4.dds"
+			}
+	}
+	
+	fun16 = {	entity = "portrait_fungoid_16_entity"	clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "fungoid_01_greetings" 
+			character_textures = {
+					"gfx/models/portraits/fungoid/fungoid_massive_16_1.dds"
+					"gfx/models/portraits/fungoid/fungoid_massive_16_2.dds"
+					"gfx/models/portraits/fungoid/fungoid_massive_16_3.dds"
+					"gfx/models/portraits/fungoid/fungoid_massive_16_4.dds"
+					"gfx/models/portraits/void/fungoid_massive_16_2.dds"
+					"gfx/models/portraits/void/fungoid_massive_16_3.dds"
+					"gfx/models/portraits/void/fungoid_massive_16_4.dds"
+			}
+	}
+}
