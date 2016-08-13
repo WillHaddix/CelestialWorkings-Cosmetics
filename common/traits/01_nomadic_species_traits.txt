@@ -1,0 +1,13 @@
+##################
+# Species Traits #
+##################
+
+trait_nomad_01 = {
+	cost = 0
+	modification = no
+
+	modifier = {
+		pop_food_req_mult = -0.1
+		pop_environment_tolerance = 1.0
+	}
+}

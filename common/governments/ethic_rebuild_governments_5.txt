@@ -1,0 +1,29 @@
+
+nomads = {
+	has_heir = yes
+	use_regnal_names = yes
+	icon = "gfx/interface/icons/governments/transcendent_empire.dds"
+	potential = {
+		hidden_trigger = { NOT = { is_country_type = fallen_empire } }
+	}
+
+	ethics = {
+		OR = {
+			has_ethic = "ethic_spiritualist"
+			has_ethic = "ethic_fanatic_spiritualist"
+		}
+		NOT = { has_ethic = "ethic_individualist" }
+		NOT = { has_ethic = "ethic_fanatic_individualist" }
+	}
+	
+	modifier = {
+		ship_upkeep_mult = -0.75
+	}
+	type = nomadic
+	pickable_at_start = yes
+	ruler_title = RT_GOD
+	ruler_title_female = RT_GODDESS
+	heir_title = HT_DEMIGOD
+	heir_title_female = HT_DEMIGODDESS
+	can_build_ruler_ship = yes
+}

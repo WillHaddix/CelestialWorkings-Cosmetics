@@ -1,0 +1,23 @@
+namespace = nomadic
+
+country_event = {
+	id = nomadic.1
+	title = nomadic.1.title
+	desc = tutorial.14.desc
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_trait = trait_nomad_01
+		is_ai = no
+	}
+
+	immediate = {
+	#### Add Tech for ship
+	}
+
+	option = {
+		name = OK
+	
+	}
+}

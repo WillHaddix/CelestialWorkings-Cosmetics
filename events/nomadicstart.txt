@@ -1,0 +1,29 @@
+namespace = nomadic
+
+pop_event = {
+	id = nomadic.2
+	title = nomadic.2.title
+	desc = tutorial.14.desc
+	picture = GFX_evt_playablerobots
+	hide_window = yes
+	
+	mean_time_to_happen = { days = 1 }
+	
+	trigger = {
+		has_trait = trait_nomad_01
+		is_ai = no
+	}
+
+	immediate = {
+		owner = {
+			capital_scope = {
+				destroy_colony = yes
+			}
+		}
+	}
+
+	option = {
+		name = OK
+
+	}
+}
